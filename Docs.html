@@ -1,0 +1,2163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://pypi.org/project/stockfish/ -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="defaultLanguage" content="en">
+    <meta name="availableLanguages" content="en, es, fr, ja, pt_BR, uk, el, de, zh_Hans, zh_Hant, ru, he, eo">
+
+
+    <title>stockfish · PyPI</title>
+    <meta name="description" content="Wraps the open-source Stockfish chess engine for easy integration into python.">
+
+    <link rel="stylesheet" href="./Docs_files/warehouse-ltr.a88e7ab7.css">
+    <link rel="stylesheet" href="./Docs_files/fontawesome.da0464c1.css">
+    <link rel="stylesheet" href="./Docs_files/css">
+    <noscript>
+      <link rel="stylesheet" href="/static/css/noscript.0673c9ea.css">
+    </noscript>
+
+
+    <link rel="icon" href="https://pypi.org/static/images/favicon.35549fe8.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS: 40 latest updates" href="https://pypi.org/rss/updates.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS: 40 newest packages" href="https://pypi.org/rss/packages.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS: latest releases for stockfish" href="https://pypi.org/rss/project/stockfish/releases.xml">    <link rel="canonical" href="https://pypi.org/project/stockfish/">
+
+    <meta property="og:url" content="https://pypi.org/project/stockfish/">
+    <meta property="og:site_name" content="PyPI">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://pypi.org/static/images/twitter.abaf4b19.webp">
+    <meta property="og:title" content="stockfish">
+    <meta property="og:description" content="Wraps the open-source Stockfish chess engine for easy integration into python.">
+
+    <link rel="search" type="application/opensearchdescription+xml" title="PyPI" href="https://pypi.org/opensearch.xml">
+
+    <script async="" data-ga-id="UA-55961911-1" data-ga4-id="G-RW7D75DF8V" src="./Docs_files/warehouse.aee26c54.js.download">
+    </script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+};
+</script>
+<script async="" src="./Docs_files/tex-svg.js.download" integrity="sha256-1CldwzdEg2k1wTmf7s5RWVd7NMXI/7nxxjJM2C4DqII=" crossorigin="anonymous"></script>
+<script async="" src="./Docs_files/js"></script>
+<script async="" src="./Docs_files/js(1)"></script>
+<script defer="" src="./Docs_files/insights.js.download"></script>
+    <script async="" src="./Docs_files/ethicalads.min.js.download" integrity="sha256-U3hKDidudIaxBDEzwGJApJgPEf2mWk6cfMWghrAa6i0= sha384-UcmsCqcNRSLW/dV3Lo1oCi2/VaurXbib6p4HyUEOeIa/4OpsrnucrugAefzVZJfI sha512-q4t1L4xEjGV2R4hzqCa41P8jrgFUS8xTb8rdNv4FGvw7FpydVj/kkxBJHOiaoxHa8olCcx1Slk9K+3sNbsM4ug==" crossorigin="anonymous"></script>
+
+  <style>[data-ea-publisher].loaded,[data-ea-type].loaded{font-size:14px;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-weight:normal;font-style:normal;leter-spacing:0px;vertical-align:baseline;line-height:1.3em}[data-ea-publisher].loaded a,[data-ea-type].loaded a{text-decoration:none}[data-ea-publisher].loaded .ea-pixel,[data-ea-type].loaded .ea-pixel{display:none}[data-ea-publisher].loaded .ea-content,[data-ea-type].loaded .ea-content{margin:1em 1em 0.5em 1em;padding:1em;background:rgba(0,0,0,0.03);color:#505050}[data-ea-publisher].loaded .ea-content a:link,[data-ea-type].loaded .ea-content a:link{color:#505050}[data-ea-publisher].loaded .ea-content a:visited,[data-ea-type].loaded .ea-content a:visited{color:#505050}[data-ea-publisher].loaded .ea-content a:hover,[data-ea-type].loaded .ea-content a:hover{color:#373737}[data-ea-publisher].loaded .ea-content a:active,[data-ea-type].loaded .ea-content a:active{color:#373737}[data-ea-publisher].loaded .ea-content a strong,[data-ea-publisher].loaded .ea-content a b,[data-ea-type].loaded .ea-content a strong,[data-ea-type].loaded .ea-content a b{color:#088cdb}[data-ea-publisher].loaded .ea-callout a:link,[data-ea-type].loaded .ea-callout a:link{color:#6a6a6a}[data-ea-publisher].loaded .ea-callout a:visited,[data-ea-type].loaded .ea-callout a:visited{color:#6a6a6a}[data-ea-publisher].loaded .ea-callout a:hover,[data-ea-type].loaded .ea-callout a:hover{color:#505050}[data-ea-publisher].loaded .ea-callout a:active,[data-ea-type].loaded .ea-callout a:active{color:#505050}[data-ea-publisher].loaded .ea-callout a strong,[data-ea-publisher].loaded .ea-callout a b,[data-ea-type].loaded .ea-callout a strong,[data-ea-type].loaded .ea-callout a b{color:#088cdb}[data-ea-publisher].loaded .ea-callout a,[data-ea-type].loaded .ea-callout a{font-size:0.8em}[data-ea-publisher].loaded.dark .ea-content,[data-ea-type].loaded.dark .ea-content{background:rgba(255,255,255,0.05);color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:link,[data-ea-type].loaded.dark .ea-content a:link{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:visited,[data-ea-type].loaded.dark .ea-content a:visited{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-content a:hover,[data-ea-type].loaded.dark .ea-content a:hover{color:#f6f6f6}[data-ea-publisher].loaded.dark .ea-content a:active,[data-ea-type].loaded.dark .ea-content a:active{color:#f6f6f6}[data-ea-publisher].loaded.dark .ea-content a strong,[data-ea-publisher].loaded.dark .ea-content a b,[data-ea-type].loaded.dark .ea-content a strong,[data-ea-type].loaded.dark .ea-content a b{color:#50baf9}[data-ea-publisher].loaded.dark .ea-callout a:link,[data-ea-type].loaded.dark .ea-callout a:link{color:#c3c3c3}[data-ea-publisher].loaded.dark .ea-callout a:visited,[data-ea-type].loaded.dark .ea-callout a:visited{color:#c3c3c3}[data-ea-publisher].loaded.dark .ea-callout a:hover,[data-ea-type].loaded.dark .ea-callout a:hover{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-callout a:active,[data-ea-type].loaded.dark .ea-callout a:active{color:#dcdcdc}[data-ea-publisher].loaded.dark .ea-callout a strong,[data-ea-publisher].loaded.dark .ea-callout a b,[data-ea-type].loaded.dark .ea-callout a strong,[data-ea-type].loaded.dark .ea-callout a b{color:#50baf9}@media (prefers-color-scheme: dark){[data-ea-publisher].loaded.adaptive .ea-content,[data-ea-type].loaded.adaptive .ea-content{background:rgba(255,255,255,0.05);color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-content a:link,[data-ea-type].loaded.adaptive .ea-content a:link{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-content a:visited,[data-ea-type].loaded.adaptive .ea-content a:visited{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-content a:hover,[data-ea-type].loaded.adaptive .ea-content a:hover{color:#f6f6f6}[data-ea-publisher].loaded.adaptive .ea-content a:active,[data-ea-type].loaded.adaptive .ea-content a:active{color:#f6f6f6}[data-ea-publisher].loaded.adaptive .ea-content a strong,[data-ea-publisher].loaded.adaptive .ea-content a b,[data-ea-type].loaded.adaptive .ea-content a strong,[data-ea-type].loaded.adaptive .ea-content a b{color:#50baf9}[data-ea-publisher].loaded.adaptive .ea-callout a:link,[data-ea-type].loaded.adaptive .ea-callout a:link{color:#c3c3c3}[data-ea-publisher].loaded.adaptive .ea-callout a:visited,[data-ea-type].loaded.adaptive .ea-callout a:visited{color:#c3c3c3}[data-ea-publisher].loaded.adaptive .ea-callout a:hover,[data-ea-type].loaded.adaptive .ea-callout a:hover{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-callout a:active,[data-ea-type].loaded.adaptive .ea-callout a:active{color:#dcdcdc}[data-ea-publisher].loaded.adaptive .ea-callout a strong,[data-ea-publisher].loaded.adaptive .ea-callout a b,[data-ea-type].loaded.adaptive .ea-callout a strong,[data-ea-type].loaded.adaptive .ea-callout a b{color:#50baf9}}[data-ea-publisher].loaded .ea-content,[data-ea-type].loaded .ea-content{border:0px;border-radius:3px;box-shadow:0px 2px 3px rgba(0,0,0,0.15)}[data-ea-publisher].loaded.raised .ea-content,[data-ea-type].loaded.raised .ea-content{border:0px;border-radius:3px;box-shadow:0px 2px 3px rgba(0,0,0,0.15)}[data-ea-publisher].loaded.bordered .ea-content,[data-ea-type].loaded.bordered .ea-content{border:1px solid rgba(0,0,0,0.04);border-radius:3px;box-shadow:none}[data-ea-publisher].loaded.bordered.dark .ea-content,[data-ea-type].loaded.bordered.dark .ea-content{border:1px solid rgba(255,255,255,0.07)}@media (prefers-color-scheme: dark){[data-ea-publisher].loaded.bordered.adaptive .ea-content,[data-ea-type].loaded.bordered.adaptive .ea-content{border:1px solid rgba(255,255,255,0.07)}}[data-ea-publisher].loaded.flat .ea-content,[data-ea-type].loaded.flat .ea-content{border:0px;border-radius:3px;box-shadow:none}[data-ea-type="image"].loaded,[data-ea-publisher]:not([data-ea-type]).loaded,.ea-type-image{display:inline-block}[data-ea-type="image"].loaded .ea-content,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content,.ea-type-image .ea-content{max-width:180px;overflow:auto;text-align:center}[data-ea-type="image"].loaded .ea-content>a>img,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content>a>img,.ea-type-image .ea-content>a>img{width:120px;height:90px;display:inline-block}[data-ea-type="image"].loaded .ea-content>.ea-text,[data-ea-publisher]:not([data-ea-type]).loaded .ea-content>.ea-text,.ea-type-image .ea-content>.ea-text{margin-top:1em;font-size:1em;text-align:center}[data-ea-type="image"].loaded .ea-callout,[data-ea-publisher]:not([data-ea-type]).loaded .ea-callout,.ea-type-image .ea-callout{max-width:180px;margin:0em 1em 1em 1em;padding-left:1em;padding-right:1em;font-style:italic;text-align:right}[data-ea-type="image"].loaded.horizontal .ea-content,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content,.ea-type-image.horizontal .ea-content{max-width:320px}[data-ea-type="image"].loaded.horizontal .ea-content>a>img,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content>a>img,.ea-type-image.horizontal .ea-content>a>img{float:left;margin-right:1em}[data-ea-type="image"].loaded.horizontal .ea-content .ea-text,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-content .ea-text,.ea-type-image.horizontal .ea-content .ea-text{margin-top:0em;text-align:left;overflow:auto}[data-ea-type="image"].loaded.horizontal .ea-callout,[data-ea-publisher]:not([data-ea-type]).loaded.horizontal .ea-callout,.ea-type-image.horizontal .ea-callout{max-width:320px;text-align:right}[data-ea-type="text"].loaded,.ea-type-text{font-size:14px}[data-ea-type="text"].loaded .ea-content,.ea-type-text .ea-content{text-align:left}[data-ea-type="text"].loaded .ea-callout,.ea-type-text .ea-callout{margin:0.5em 1em 1em 1em;padding-left:1em;padding-right:1em;text-align:right;font-style:italic}[data-ea-style="stickybox"].loaded .ea-type-image{z-index:1000;position:fixed;bottom:20px;right:20px}[data-ea-style="stickybox"].loaded .ea-type-image .ea-stickybox-hide{cursor:pointer;position:absolute;top:0.75em;right:0.75em;background-color:#fefefe;border:1px solid #088cdb;border-radius:50%;color:#088cdb;font-size:1em;text-align:center;height:1.5em;width:1.5em;line-height:1.5em}@media (max-width: 1300px){[data-ea-style="stickybox"].loaded .ea-type-image{position:static;bottom:0;right:0;margin:auto;text-align:center}[data-ea-style="stickybox"].loaded .ea-type-image .ea-stickybox-hide{display:none}}@media (min-width: 1301px){[data-ea-style="stickybox"].loaded .ea-type-image .ea-content{background:#dcdcdc}[data-ea-style="stickybox"].loaded.dark .ea-type-image .ea-content{background:#505050}}@media (min-width: 1301px) and (prefers-color-scheme: dark){[data-ea-style="stickybox"].loaded.adaptive .ea-type-image .ea-content{background:#505050}}
+</style><script src="./Docs_files/saved_resource" type="text/javascript" async=""></script><style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style id="MJX-SVG-styles">
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+</style></head>
+
+  <body data-controller="viewport-toggle" style="padding-top: 0px;">
+
+    <!-- Accessibility: this link should always be the first piece of content inside the body-->
+    <a href="https://pypi.org/project/stockfish/#content" class="skip-to-content">Skip to main content</a>
+
+    <button type="button" class="button button--primary button--switch-to-mobile hidden" data-viewport-toggle-target="switchToMobile" data-action="viewport-toggle#switchToMobile">
+Switch to mobile version    </button>
+
+    <div id="sticky-notifications" class="stick-to-top js-stick-to-top">
+      <!-- Add browser warning. Will show for ie9 and below -->
+      <!--[if IE]>
+      <div class="notification-bar notification-bar--warning" role="status">
+        <span class="notification-bar__icon">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span class="sr-only">Warning</span>
+        </span>
+        <span class="notification-bar__message">You are using an unsupported browser, upgrade to a newer version.</span>
+      </div>
+      <![endif]-->
+      <noscript>
+      <div class="notification-bar notification-bar--warning" role="status">
+        <span class="notification-bar__icon">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span class="sr-only">Warning</span>
+        </span>
+        <span class="notification-bar__message">Some features may not work without JavaScript. Please try enabling it if you encounter problems.</span>
+      </div>
+      </noscript>
+
+<div data-html-include="/_includes/notification-banners/"></div>    </div>
+
+<div data-html-include="/_includes/flash-messages/">
+
+
+</div>
+
+<div data-html-include="/_includes/session-notifications/"></div>
+    <header class="site-header ">
+      <div class="site-container">
+        <div class="split-layout">
+          <div class="split-layout">
+            <div>
+              <a class="site-header__logo" href="https://pypi.org/">
+                <img alt="PyPI" src="./Docs_files/logo-small.8998e9d1.svg">
+              </a>
+            </div>
+
+            <form class="search-form search-form--primary" action="https://pypi.org/search/" role="search">
+              <label for="search" class="sr-only">Search PyPI</label>
+              <input id="search" class="search-form__search" type="text" name="q" placeholder="Search projects" value="" autocomplete="off" autocapitalize="off" spellcheck="false" data-controller="search-focus" data-action="keydown@window-&gt;search-focus#focusSearchField" data-search-focus-target="searchField">
+              <button type="submit" class="search-form__button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <span class="sr-only">Search</span>
+              </button>
+            </form>
+          </div>
+
+<div data-html-include="/_includes/current-user-indicator/">    <div id="user-indicator" class="horizontal-menu horizontal-menu--light horizontal-menu--tall">
+  <nav class="horizontal-menu horizontal-menu--light horizontal-menu--tall hide-on-tablet" aria-label="Main navigation">
+    <ul>
+      <li class="horizontal-menu__item"><a href="https://pypi.org/help/" class="horizontal-menu__link">Help</a></li>
+      <li class="horizontal-menu__item"><a href="https://pypi.org/sponsors/" class="horizontal-menu__link">Sponsors</a></li>
+      <li class="horizontal-menu__item"><a href="https://pypi.org/account/login/" class="horizontal-menu__link">Log in</a></li>
+      <li class="horizontal-menu__item"><a href="https://pypi.org/account/register/" class="horizontal-menu__link">Register</a></li>
+    </ul>
+  </nav>
+  <nav class="dropdown dropdown--on-menu hidden show-on-tablet" aria-label="Main navigation">
+    <button type="button" class="horizontal-menu__link dropdown__trigger" aria-haspopup="true" aria-expanded="false" aria-label="View menu" data-dropdown-bound="true">
+Menu      <span class="dropdown__trigger-caret">
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </span>
+    </button>
+    <ul class="dropdown__content" aria-hidden="true" aria-label="Main menu">
+      <li><a class="dropdown__link" href="https://pypi.org/help/">Help</a></li>
+      <li><a class="dropdown__link" href="https://pypi.org/sponsors/">Sponsors</a></li>
+      <li><a class="dropdown__link" href="https://pypi.org/account/login/">Log in</a></li>
+      <li><a class="dropdown__link" href="https://pypi.org/account/register/">Register</a></li>
+    </ul>
+  </nav>
+</div>
+</div>        </div>
+      </div>
+    </header>
+
+    <div class="mobile-search">
+      <form class="search-form search-form--fullwidth" action="https://pypi.org/search/" role="search">
+        <label for="mobile-search" class="sr-only">Search PyPI</label>
+        <input id="mobile-search" class="search-form__search" type="text" name="q" placeholder="Search projects" value="" autocomplete="off" autocapitalize="off" spellcheck="false">
+        
+        <button type="submit" class="search-form__button">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <span class="sr-only">Search</span>
+        </button>
+      </form>
+    </div>
+
+    <main id="content">
+<div class="hidden" data-controller="github-repo-stats" data-github-repo-stats-github-repo-info-outlet=".github-repo-info" data-github-repo-stats-url-value="https://api.github.com/repos/zhelyabuzhsky/stockfish" data-github-repo-stats-issue-url-value="https://api.github.com/search/issues?q=repo:zhelyabuzhsky/stockfish+type:issue+state:open&amp;per_page=1">
+</div>
+
+<div class="banner">
+  <div class="package-header">
+    <div class="package-header__left">
+      <h1 class="package-header__name">
+        stockfish 3.28.0
+      </h1>
+
+      <div data-controller="clipboard">
+        <p class="package-header__pip-instructions">
+          <span id="pip-command" data-clipboard-target="source">pip install stockfish</span>
+          <button type="button" class="copy-tooltip copy-tooltip-s" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard">
+            <i class="fa fa-copy" aria-hidden="true"></i>
+            <span class="sr-only">Copy PIP instructions</span>
+          </button>
+        </p>
+      </div>
+    </div>
+
+    <div class="package-header__right">
+      <a class="status-badge status-badge--good" href="https://pypi.org/project/stockfish/">
+        <span>Latest version</span>
+      </a>
+      <p class="package-header__date">
+Released: <time datetime="2022-07-05T04:38:25+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-07-05 10:08:25 (+05:30)" aria-label="2022-07-05 10:08:25 (+05:30)">Jul 5, 2022</time>      </p>
+    </div>
+  </div>
+</div>
+
+<div class="horizontal-section horizontal-section--grey horizontal-section--thin">
+  <div class="site-container">
+<div data-html-include="/_includes/administer-project-include/stockfish"></div>    <div class="split-layout split-layout--middle package-description">
+      <p class="package-description__summary">Wraps the open-source Stockfish chess engine for easy integration into python.</p>
+<div data-html-include="/_includes/edit-project-button/stockfish"></div>    </div>
+  </div>
+</div>
+
+<div data-controller="project-tabs" data-project-tabs-content="description">
+  <div class="tabs-container">
+    <div class="vertical-tabs">
+      <div class="vertical-tabs__tabs">
+        <div class="sidebar-section">
+          <h3 class="sidebar-section__title">Navigation</h3>
+          <nav aria-label="Navigation for stockfish">
+            <ul class="vertical-tabs__list" role="tablist">
+              <li role="tab">
+                <a id="description-tab" href="https://pypi.org/project/stockfish/#description" data-project-tabs-target="tab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--is-active" aria-selected="true" aria-label="Project description. Focus will be moved to the description.">
+                  <i class="fa fa-align-left" aria-hidden="true"></i>
+Project description                </a>
+              </li>
+              <li role="tab">
+                <a id="history-tab" href="https://pypi.org/project/stockfish/#history" data-project-tabs-target="tab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon" aria-label="Release history. Focus will be moved to the history panel.">
+                  <i class="fa fa-history" aria-hidden="true"></i>
+Release history                </a>
+              </li>
+              <li role="tab">
+                <a id="files-tab" href="https://pypi.org/project/stockfish/#files" data-project-tabs-target="tab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon" aria-label="Download files. Focus will be moved to the project files.">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+Download files                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+<div class="sidebar-section verified">
+  <h3 class="sidebar-section__title">Verified details</h3>
+  <small><i>These details have been verified by PyPI</i></small>
+    <h6>Maintainers</h6>
+      <span class="sidebar-section__maintainer">
+        <a href="https://pypi.org/user/JohnDoknjas/" aria-label="">
+          <span class="sidebar-section__user-gravatar">
+            <img src="./Docs_files/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f38643238653831656563313136613937653661336664393963373731393266333f73697a653d3530" height="50" width="50" alt="Avatar for JohnDoknjas from gravatar.com" title="Avatar for JohnDoknjas from gravatar.com">
+          </span>
+          <span class="sidebar-section__user-gravatar-text">
+            JohnDoknjas
+          </span>
+        </a>
+      </span>
+</div>
+
+<div class="sidebar-section verified">
+  <h3 class="sidebar-section__title">Unverified details</h3>
+  <small><i>These details have <b>not</b> been verified by PyPI</i></small>
+
+  <h6>GitHub Statistics</h6>
+  <div class="github-repo-info" data-controller="github-repo-info">
+    <ul class="vertical-tabs__list">
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="stargazersUrl" rel="noopener" href="https://github.com/zhelyabuzhsky/stockfish/stargazers">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <strong>Stars:</strong>
+          <span data-github-repo-info-target="stargazersCount">272</span>
+        </a>
+      </li>
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="forksUrl" rel="noopener" href="https://github.com/zhelyabuzhsky/stockfish/network/members">
+          <i class="fa fa-code-branch" aria-hidden="true"></i>
+          <strong>Forks:</strong>
+          <span data-github-repo-info-target="forksCount">55</span>
+        </a>
+      </li>
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="openIssuesUrl" rel="noopener" href="https://github.com/zhelyabuzhsky/stockfish/issues">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          <strong>Open issues:</strong>
+          <span data-github-repo-info-target="openIssuesCount">8</span>
+        </a>
+      </li>
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="openPRsUrl" rel="noopener" href="https://github.com/zhelyabuzhsky/stockfish/pulls">
+          <i class="fa fa-code-pull-request" aria-hidden="true"></i>
+          <strong>Open PRs:</strong>
+          <span data-github-repo-info-target="openPRsCount">6</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+<div class="sidebar-section">
+  <h6>Meta</h6>
+  <p><strong>License:</strong> MIT License (MIT)</p>
+    <p><strong>Author:</strong> <a href="mailto:zhelyabuzhsky@icloud.com">Ilya Zhelyabuzhsky</a></p>
+  <p class="tags">
+    <i class="fa fa-tags" aria-hidden="true"></i>
+    <span class="sr-only">Tags</span>
+    <span class="package-keyword">
+      chess,    </span>
+    <span class="package-keyword">
+      stockfish    </span>
+  </p>
+  <p>
+    <strong>Requires:</strong> Python &gt;=3.7
+  </p>
+</div>
+
+<div class="sidebar-section">
+  <h6 class="sidebar-section__title">Classifiers</h6>
+  <ul class="sidebar-section__classifiers">
+    <li>
+      <strong>Development Status</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=Development+Status+%3A%3A+5+-+Production%2FStable">
+            5 - Production/Stable
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>License</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=License+%3A%3A+OSI+Approved+%3A%3A+MIT+License">
+            OSI Approved :: MIT License
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Natural Language</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=Natural+Language+%3A%3A+English">
+            English
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Operating System</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=Operating+System+%3A%3A+Unix">
+            Unix
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Programming Language</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python">
+            Python
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.7">
+            Python :: 3.7
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.8">
+            Python :: 3.8
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.9">
+            Python :: 3.9
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.10">
+            Python :: 3.10
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+Implementation+%3A%3A+CPython">
+            Python :: Implementation :: CPython
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Topic</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=Topic+%3A%3A+Games%2FEntertainment+%3A%3A+Board+Games">
+            Games/Entertainment :: Board Games
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Topic+%3A%3A+Software+Development+%3A%3A+Libraries+%3A%3A+Python+Modules">
+            Software Development :: Libraries :: Python Modules
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div><div class="sidebar-section loaded" data-ea-publisher="psf" data-ea-type="psf" data-ea-keywords="pypi-sidebar"><div class="ethical-sidebar"><div class="ethical-content"><a href="https://server.ethicalads.io/proxy/click/6094/90d6ac43-1738-4e3d-88f2-f46b717ce7fa/" rel="nofollow noopener sponsored" target="_blank" class="ethical-image-link"><img src="./Docs_files/AXP_BlueBoxLogo_sZiPeUY.png" alt="Sponsored: Python Software Foundation"></a><div class="ethical-text">American Express is a Maintaining sponsor of the Python Software Foundation.</div></div><div class="ethical-callout"><small><em><a href="https://www.python.org/psf/sponsorship/?ref=ethicalads-placement">PSF Sponsor</a><span> · </span><a href="https://www.ethicalads.io/sponsorship-platform/?ref=psf">Served ethically</a></em></small></div></div><img src="./Docs_files/saved_resource(1)" class="ea-pixel"><img src="./Docs_files/saved_resource(2)" class="ea-pixel"></div>
+<div data-html-include="https://pypi.org/_includes/submit-malware-report/stockfish"></div>
+      </div>
+      <div class="vertical-tabs__panel">
+        <!-- mobile menu -->
+        <nav aria-label="Navigation for stockfish">
+          <ul class="vertical-tabs__list" role="tablist">
+            <li role="tab">
+              <a id="mobile-description-tab" href="https://pypi.org/project/stockfish/#description" data-project-tabs-target="mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile vertical-tabs__tab--no-top-border vertical-tabs__tab--is-active" aria-selected="true" aria-label="Project description. Focus will be moved to the description.">
+                <i class="fa fa-align-left" aria-hidden="true"></i>
+Project description              </a>
+            </li>
+            <li role="tab">
+              <a id="mobile-data-tab" href="https://pypi.org/project/stockfish/#data" data-project-tabs-target="mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" aria-label="Project details. Focus will be moved to the project details.">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+Project details              </a>
+            </li>
+            <li role="tab">
+              <a id="mobile-history-tab" href="https://pypi.org/project/stockfish/#history" data-project-tabs-target="mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" aria-label="Release history. Focus will be moved to the history panel.">
+              <i class="fa fa-history" aria-hidden="true"></i>
+Release history            </a>
+            </li>
+            <li role="tab">
+              <a id="mobile-files-tab" href="https://pypi.org/project/stockfish/#files" data-project-tabs-target="mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" aria-label="Download files. Focus will be moved to the project files.">
+                <i class="fa fa-download" aria-hidden="true"></i>
+Download files              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="description" data-project-tabs-target="content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="description-tab mobile-description-tab" tabindex="-1" style="display: block;">
+          <h2 class="page-title">Project description</h2>
+          <div class="project-description">
+            <h1>Stockfish</h1>
+<p>Implements an easy-to-use Stockfish class to integrates the Stockfish chess engine with Python.</p>
+<h2>Install</h2>
+<pre lang="bash">$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>stockfish
+</pre>
+<h4>Ubuntu</h4>
+<pre lang="bash">$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>stockfish
+</pre>
+<h4>Mac OS</h4>
+<pre lang="bash">$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>stockfish
+</pre>
+<h2>Features and usage examples</h2>
+<h3>Initialize Stockfish class</h3>
+<p>You should install the stockfish engine in your operating system globally or specify path to binary file in class constructor</p>
+<pre lang="python3"><span class="kn">from</span> <span class="nn">stockfish</span> <span class="kn">import</span> <span class="n">Stockfish</span>
+
+<span class="n">stockfish</span> <span class="o">=</span> <span class="n">Stockfish</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">"/Users/zhelyabuzhsky/Work/stockfish/stockfish-9-64"</span><span class="p">)</span>
+</pre>
+<p>There are some default engine settings used by this wrapper. For increasing Stockfish's strength and speed, the "Threads" and "Hash" parameters can be modified.</p>
+<pre lang="python3"><span class="p">{</span>
+    <span class="s2">"Debug Log File"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="s2">"Contempt"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"Min Split Depth"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"Threads"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1"># More threads will make the engine stronger, but should be kept at less than the number of logical processors on your computer.</span>
+    <span class="s2">"Ponder"</span><span class="p">:</span> <span class="s2">"false"</span><span class="p">,</span>
+    <span class="s2">"Hash"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="c1"># Default size is 16 MB. It's recommended that you increase this value, but keep it as some power of 2. E.g., if you're fine using 2 GB of RAM, set Hash to 2048 (11th power of 2).</span>
+    <span class="s2">"MultiPV"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"Skill Level"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s2">"Move Overhead"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">"Minimum Thinking Time"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s2">"Slow Mover"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s2">"UCI_Chess960"</span><span class="p">:</span> <span class="s2">"false"</span><span class="p">,</span>
+    <span class="s2">"UCI_LimitStrength"</span><span class="p">:</span> <span class="s2">"false"</span><span class="p">,</span>
+    <span class="s2">"UCI_Elo"</span><span class="p">:</span> <span class="mi">1350</span>
+<span class="p">}</span>
+</pre>
+<p>You can change them, as well as the default search depth, during your Stockfish class initialization:</p>
+<pre lang="python3"><span class="n">stockfish</span> <span class="o">=</span> <span class="n">Stockfish</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">"/Users/zhelyabuzhsky/Work/stockfish/stockfish-9-64"</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="s2">"Threads"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"Minimum Thinking Time"</span><span class="p">:</span> <span class="mi">30</span><span class="p">})</span>
+</pre>
+<p>These parameters can also be updated at any time by calling the "update_engine_parameters" function:</p>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">update_engine_parameters</span><span class="p">({</span><span class="s2">"Hash"</span><span class="p">:</span> <span class="mi">2048</span><span class="p">,</span> <span class="s2">"UCI_Chess960"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">})</span> <span class="c1"># Gets stockfish to use a 2GB hash table, and also to play Chess960.</span>
+</pre>
+<h3>Set position by a sequence of moves from the starting position</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">set_position</span><span class="p">([</span><span class="s2">"e2e4"</span><span class="p">,</span> <span class="s2">"e7e6"</span><span class="p">])</span>
+</pre>
+<h3>Update position by making a sequence of moves from the current position</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">make_moves_from_current_position</span><span class="p">([</span><span class="s2">"g4d7"</span><span class="p">,</span> <span class="s2">"a8b8"</span><span class="p">,</span> <span class="s2">"f1d1"</span><span class="p">])</span>
+</pre>
+<h3>Set position by Forsyth–Edwards Notation (FEN)</h3>
+<p>If you'd like to first check if your fen is valid, call the is_fen_valid() function below.<br>
+Also, if you want to play Chess960, it's recommended you first update the "UCI_Chess960" engine parameter to be "true", before calling set_fen_position.</p>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">set_fen_position</span><span class="p">(</span><span class="s2">"rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"</span><span class="p">)</span>
+</pre>
+<h3>Check whether the given FEN is valid</h3>
+<p>This function returns a bool saying whether the passed in FEN is valid (both syntax wise and whether the position represented is legal).<br>
+The function isn't perfect and won't catch all cases, but generally it should return the correct answer.
+For example, one exception is positions which are legal, but have no legal moves.
+I.e., for checkmates and stalemates, this function will incorrectly say the fen is invalid.</p>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">is_fen_valid</span><span class="p">(</span><span class="s2">"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"</span><span class="p">)</span>
+</pre>
+<pre lang="text">True
+</pre>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">is_fen_valid</span><span class="p">(</span><span class="s2">"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -"</span><span class="p">)</span> <span class="c1"># will return False, in this case because the FEN is missing two of the six required fields.</span>
+</pre>
+<pre lang="text">False
+</pre>
+<h3>Get best move</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_best_move</span><span class="p">()</span>
+</pre>
+<pre lang="text">d2d4
+</pre>
+<p>It's possible to specify remaining time on black and/or white clock. Time is in milliseconds.</p>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_best_move</span><span class="p">(</span><span class="n">wtime</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">btime</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</pre>
+<h3>Get best move based on a time constraint</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_best_move_time</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre>
+<p>Time constraint is in milliseconds</p>
+<pre lang="text">e2e4
+</pre>
+<h3>Check is move correct with current position</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">is_move_correct</span><span class="p">(</span><span class="s1">'a2a3'</span><span class="p">)</span>
+</pre>
+<pre lang="text">True
+</pre>
+<h3>Get info on the top n moves</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_top_moves</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre>
+<pre lang="text">[
+    {'Move': 'f5h7', 'Centipawn': None, 'Mate': 1},
+    {'Move': 'f5d7', 'Centipawn': 713, 'Mate': None},
+    {'Move': 'f5h5', 'Centipawn': -31, 'Mate': None}
+]
+</pre>
+<h3>Get Stockfish's win/draw/loss stats for the side to move in the current position</h3>
+<p>Before calling this function, it is recommended that you first check if your version of Stockfish is recent enough to display WDL stats. To do this,<br>
+use the "does_current_engine_version_have_wdl_option()" function below.</p>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_wdl_stats</span><span class="p">()</span>
+</pre>
+<pre lang="text">[87, 894, 19]
+</pre>
+<h3>Find if your version of Stockfish is recent enough to display WDL stats</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">does_current_engine_version_have_wdl_option</span><span class="p">()</span>
+</pre>
+<pre lang="text">True
+</pre>
+<h3>Set current engine's skill level (ignoring ELO rating)</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">set_skill_level</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre>
+<h3>Set current engine's ELO rating (ignoring skill level)</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">set_elo_rating</span><span class="p">(</span><span class="mi">1350</span><span class="p">)</span>
+</pre>
+<h3>Set current engine's depth</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">set_depth</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre>
+<h3>Get current engine's parameters</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_parameters</span><span class="p">()</span>
+</pre>
+<pre lang="text">{
+    "Debug Log File": "",
+    "Contempt": 0,
+    "Min Split Depth": 0,
+    "Threads": 1,
+    "Ponder": "false",
+    "Hash": 16,
+    "MultiPV": 1,
+    "Skill Level": 20,
+    "Move Overhead": 10,
+    "Minimum Thinking Time": 20,
+    "Slow Mover": 100,
+    "UCI_Chess960": "false",
+    "UCI_LimitStrength": "false",
+    "UCI_Elo": 1350
+}
+</pre>
+<h3>Reset the engine's parameters to the default</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">reset_engine_parameters</span><span class="p">()</span>
+</pre>
+<h3>Get current board position in Forsyth–Edwards notation (FEN)</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_fen_position</span><span class="p">()</span>
+</pre>
+<pre lang="text">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+</pre>
+<h3>Get current board visual</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_board_visual</span><span class="p">()</span>
+</pre>
+<pre lang="text">+---+---+---+---+---+---+---+---+
+| r | n | b | q | k | b | n | r | 8
++---+---+---+---+---+---+---+---+
+| p | p | p | p | p | p | p | p | 7
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 6
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 4
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P | P | P | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R | N | B | Q | K | B | N | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+</pre>
+<p>This function has an optional boolean (True by default) as a parameter that indicates whether the board should be seen from the view of white. So it is possible to get the board from black's point of view like this:</p>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_board_visual</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre>
+<pre lang="text">+---+---+---+---+---+---+---+---+
+| R | N | B | K | Q | B | N | R | 1
++---+---+---+---+---+---+---+---+
+| P | P | P | P | P | P | P | P | 2
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 3
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 4
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 6
++---+---+---+---+---+---+---+---+
+| p | p | p | p | p | p | p | p | 7
++---+---+---+---+---+---+---+---+
+| r | n | b | k | q | b | n | r | 8
++---+---+---+---+---+---+---+---+
+  h   g   f   e   d   c   b   a
+</pre>
+<h3>Get current board evaluation in centipawns or mate in x</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_evaluation</span><span class="p">()</span>
+</pre>
+<p>Positive is advantage white, negative is advantage black</p>
+<pre lang="text">{"type":"cp", "value":12}
+{"type":"mate", "value":-3}
+</pre>
+<h3>Run benchmark</h3>
+<h4>BenchmarkParameters</h4>
+<pre lang="python3"><span class="n">params</span> <span class="o">=</span> <span class="n">BenchmarkParameters</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre>
+<p>parameters required to run the benchmark function. kwargs can be used to set custom values.</p>
+<pre lang="text">ttSize: range(1,128001)
+threads: range(1,513)
+limit: range(1,10001)
+fenFile: "path/to/file.fen"
+limitType: "depth", "perft", "nodes", "movetime"
+evalType: "mixed", "classical", "NNUE"
+</pre>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">benchmark</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</pre>
+<p>This will run the bench command with BenchmarkParameters.
+It is an additional custom non-UCI command, mainly for debugging.
+Do not use this command during a search!</p>
+<h3>Get current major version of stockfish engine</h3>
+<p>E.g., if the engine being used is Stockfish 14.1 or Stockfish 14, then the function would return 14.
+Meanwhile, if a development build of the engine is being used (not an official release), then the function returns an
+int with 5 or 6 digits, representing the date the engine was compiled on.
+For example, 20122 is returned for the development build compiled on January 2, 2022.</p>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_stockfish_major_version</span><span class="p">()</span>
+</pre>
+<pre lang="text">15
+</pre>
+<h3>Find if the version of Stockfish being used is a development build</h3>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">is_development_build_of_engine</span><span class="p">()</span>
+</pre>
+<pre lang="text">False
+</pre>
+<h3>Find what is on a certain square</h3>
+<p>If the square is empty, the None object is returned. Otherwise, one of 12 enum members of a custom<br>
+Stockfish.Piece enum will be returned. Each of the 12 members of this enum is named in the following pattern:<br>
+<em>colour</em> followed by <em>underscore</em> followed by <em>piece name</em>, where the colour and piece name are in all caps.<br>
+For example, say the current position is the starting position:</p>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">get_what_is_on_square</span><span class="p">(</span><span class="s2">"e1"</span><span class="p">)</span> <span class="c1"># returns Stockfish.Piece.WHITE_KING</span>
+<span class="n">stockfish</span><span class="o">.</span><span class="n">get_what_is_on_square</span><span class="p">(</span><span class="s2">"d8"</span><span class="p">)</span> <span class="c1"># returns Stockfish.Piece.BLACK_QUEEN</span>
+<span class="n">stockfish</span><span class="o">.</span><span class="n">get_what_is_on_square</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">)</span> <span class="c1"># returns Stockfish.Piece.WHITE_PAWN</span>
+<span class="n">stockfish</span><span class="o">.</span><span class="n">get_what_is_on_square</span><span class="p">(</span><span class="s2">"b5"</span><span class="p">)</span> <span class="c1"># returns None</span>
+</pre>
+<h3>Find if a move will be a capture (and if so, what type of capture)</h3>
+<p>The argument must be a string that represents the move, using the notation that Stockfish uses (i.e., the coordinate of the starting square followed by the coordinate of the ending square).<br>
+The function will return one of the following enum members from a custom Stockfish.Capture enum: DIRECT_CAPTURE, EN_PASSANT, or NO_CAPTURE.<br>
+For example, say the current position is the one after 1.e4 Nf6 2.Nc3 e6 3.e5 d5.</p>
+<pre lang="python3"><span class="n">stockfish</span><span class="o">.</span><span class="n">will_move_be_a_capture</span><span class="p">(</span><span class="s2">"c3d5"</span><span class="p">)</span>  <span class="c1"># returns Stockfish.Capture.DIRECT_CAPTURE  </span>
+<span class="n">stockfish</span><span class="o">.</span><span class="n">will_move_be_a_capture</span><span class="p">(</span><span class="s2">"e5f6"</span><span class="p">)</span>  <span class="c1"># returns Stockfish.Capture.DIRECT_CAPTURE  </span>
+<span class="n">stockfish</span><span class="o">.</span><span class="n">will_move_be_a_capture</span><span class="p">(</span><span class="s2">"e5d6"</span><span class="p">)</span>  <span class="c1"># returns Stockfish.Capture.EN_PASSANT  </span>
+<span class="n">stockfish</span><span class="o">.</span><span class="n">will_move_be_a_capture</span><span class="p">(</span><span class="s2">"f1e2"</span><span class="p">)</span>  <span class="c1"># returns Stockfish.Capture.NO_CAPTURE  </span>
+</pre>
+<h3>StockfishException</h3>
+<p>The <code>StockfishException</code> is a newly defined Exception type. It is thrown when the underlying Stockfish process created by the wrapper crashes. This can happen when an incorrect input like an invalid FEN (for example <code>8/8/8/3k4/3K4/8/8/8 w - - 0 1</code> with both kings next to each other) is given to Stockfish. <br>
+Not all invalid inputs will lead to a <code>StockfishException</code>, but only those which cause the Stockfish process to crash. <br>
+To handle a <code>StockfishException</code> when using this library, import the <code>StockfishException</code> from the library and use a <code>try/except</code>-block:</p>
+<pre lang="python3"><span class="kn">from</span> <span class="nn">stockfish</span> <span class="kn">import</span> <span class="n">StockfishException</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Evaluation routine</span>
+
+<span class="k">except</span> <span class="n">StockfishException</span><span class="p">:</span>
+    <span class="c1"># Error handling</span>
+</pre>
+<h2>Testing</h2>
+<pre lang="bash">$<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span><span class="nb">test</span>
+</pre>
+<h2>Security</h2>
+<p>If you discover any security related issues, please email <a href="mailto:zhelyabuzhsky@icloud.com" rel="nofollow">zhelyabuzhsky@icloud.com</a> instead of using the issue tracker.</p>
+<h2>Credits</h2>
+<ul>
+<li><a href="https://github.com/zhelyabuzhsky" rel="nofollow">Ilya Zhelyabuzhsky</a></li>
+<li><a href="https://github.com/zhelyabuzhsky/stockfish/graphs/contributors" rel="nofollow">All Contributors</a></li>
+</ul>
+<h2>License</h2>
+<p>MIT License. Please see <a href="https://github.com/zhelyabuzhsky/stockfish/blob/master/LICENSE" rel="nofollow">License File</a> for more information.</p>
+
+          </div>
+        </div>
+
+        <div id="data" data-project-tabs-target="content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="mobile-data-tab" tabindex="-1" style="display: none;">
+          <h2 class="page-title">Project details</h2>
+<div class="sidebar-section verified">
+  <h3 class="sidebar-section__title">Verified details</h3>
+  <small><i>These details have been verified by PyPI</i></small>
+    <h6>Maintainers</h6>
+      <span class="sidebar-section__maintainer">
+        <a href="https://pypi.org/user/JohnDoknjas/" aria-label="">
+          <span class="sidebar-section__user-gravatar">
+            <img src="./Docs_files/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f38643238653831656563313136613937653661336664393963373731393266333f73697a653d3530" height="50" width="50" alt="Avatar for JohnDoknjas from gravatar.com" title="Avatar for JohnDoknjas from gravatar.com">
+          </span>
+          <span class="sidebar-section__user-gravatar-text">
+            JohnDoknjas
+          </span>
+        </a>
+      </span>
+</div>
+
+<div class="sidebar-section verified">
+  <h3 class="sidebar-section__title">Unverified details</h3>
+  <small><i>These details have <b>not</b> been verified by PyPI</i></small>
+
+  <h6>GitHub Statistics</h6>
+  <div class="github-repo-info" data-controller="github-repo-info">
+    <ul class="vertical-tabs__list">
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="stargazersUrl" rel="noopener" href="https://github.com/zhelyabuzhsky/stockfish/stargazers">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <strong>Stars:</strong>
+          <span data-github-repo-info-target="stargazersCount">272</span>
+        </a>
+      </li>
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="forksUrl" rel="noopener" href="https://github.com/zhelyabuzhsky/stockfish/network/members">
+          <i class="fa fa-code-branch" aria-hidden="true"></i>
+          <strong>Forks:</strong>
+          <span data-github-repo-info-target="forksCount">55</span>
+        </a>
+      </li>
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="openIssuesUrl" rel="noopener" href="https://github.com/zhelyabuzhsky/stockfish/issues">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          <strong>Open issues:</strong>
+          <span data-github-repo-info-target="openIssuesCount">8</span>
+        </a>
+      </li>
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="openPRsUrl" rel="noopener" href="https://github.com/zhelyabuzhsky/stockfish/pulls">
+          <i class="fa fa-code-pull-request" aria-hidden="true"></i>
+          <strong>Open PRs:</strong>
+          <span data-github-repo-info-target="openPRsCount">6</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+<div class="sidebar-section">
+  <h6>Meta</h6>
+  <p><strong>License:</strong> MIT License (MIT)</p>
+    <p><strong>Author:</strong> <a href="mailto:zhelyabuzhsky@icloud.com">Ilya Zhelyabuzhsky</a></p>
+  <p class="tags">
+    <i class="fa fa-tags" aria-hidden="true"></i>
+    <span class="sr-only">Tags</span>
+    <span class="package-keyword">
+      chess,    </span>
+    <span class="package-keyword">
+      stockfish    </span>
+  </p>
+  <p>
+    <strong>Requires:</strong> Python &gt;=3.7
+  </p>
+</div>
+
+<div class="sidebar-section">
+  <h6 class="sidebar-section__title">Classifiers</h6>
+  <ul class="sidebar-section__classifiers">
+    <li>
+      <strong>Development Status</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=Development+Status+%3A%3A+5+-+Production%2FStable">
+            5 - Production/Stable
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>License</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=License+%3A%3A+OSI+Approved+%3A%3A+MIT+License">
+            OSI Approved :: MIT License
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Natural Language</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=Natural+Language+%3A%3A+English">
+            English
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Operating System</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=Operating+System+%3A%3A+Unix">
+            Unix
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Programming Language</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python">
+            Python
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.7">
+            Python :: 3.7
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.8">
+            Python :: 3.8
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.9">
+            Python :: 3.9
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.10">
+            Python :: 3.10
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+Implementation+%3A%3A+CPython">
+            Python :: Implementation :: CPython
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Topic</strong>
+      <ul>
+        <li>
+          <a href="https://pypi.org/search/?c=Topic+%3A%3A+Games%2FEntertainment+%3A%3A+Board+Games">
+            Games/Entertainment :: Board Games
+          </a>
+        </li>
+        <li>
+          <a href="https://pypi.org/search/?c=Topic+%3A%3A+Software+Development+%3A%3A+Libraries+%3A%3A+Python+Modules">
+            Software Development :: Libraries :: Python Modules
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>          <br>
+        </div>
+
+        <div id="history" data-project-tabs-target="content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="history-tab mobile-history-tab" tabindex="-1" style="display: none;">
+          <h2 class="page-title split-layout">
+            <span>Release history</span>
+            <span class="reset-text margin-top">
+              <a href="https://pypi.org/help/#project-release-notifications">Release notifications</a> |
+              <a href="https://pypi.org/rss/project/stockfish/releases.xml">RSS feed <i class="fa fa-rss" aria-hidden="true"></i></a>
+            </span>
+          </h2>
+
+          <div class="release-timeline">
+            <div class="release release--latest release--current">
+              <div class="release__meta">
+                <span class="badge">This version</span>
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/blue-cube.572a5bfb.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.28.0/">
+                <p class="release__version">
+                  3.28.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2022-07-05T04:38:25+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-07-05 10:08:25 (+05:30)" aria-label="2022-07-05 10:08:25 (+05:30)">Jul 5, 2022</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.27.0/">
+                <p class="release__version">
+                  3.27.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2022-06-15T06:38:48+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-06-15 12:08:48 (+05:30)" aria-label="2022-06-15 12:08:48 (+05:30)">Jun 15, 2022</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.26.0/">
+                <p class="release__version">
+                  3.26.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2022-06-07T12:14:43+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-06-07 17:44:43 (+05:30)" aria-label="2022-06-07 17:44:43 (+05:30)">Jun 7, 2022</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.25.2/">
+                <p class="release__version">
+                  3.25.2
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2022-05-31T05:23:50+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-05-31 10:53:50 (+05:30)" aria-label="2022-05-31 10:53:50 (+05:30)">May 31, 2022</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.24.0/">
+                <p class="release__version">
+                  3.24.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2022-05-18T10:52:23+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-05-18 16:22:23 (+05:30)" aria-label="2022-05-18 16:22:23 (+05:30)">May 18, 2022</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.23.0/">
+                <p class="release__version">
+                  3.23.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2022-03-02T06:05:30+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-03-02 11:35:30 (+05:30)" aria-label="2022-03-02 11:35:30 (+05:30)">Mar 2, 2022</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.22.1/">
+                <p class="release__version">
+                  3.22.1
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2022-01-10T17:40:34+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-01-10 23:10:34 (+05:30)" aria-label="2022-01-10 23:10:34 (+05:30)">Jan 10, 2022</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.22.0/">
+                <p class="release__version">
+                  3.22.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2022-01-02T04:54:33+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-01-02 10:24:33 (+05:30)" aria-label="2022-01-02 10:24:33 (+05:30)">Jan 2, 2022</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.21.0/">
+                <p class="release__version">
+                  3.21.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-12-30T07:34:24+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-12-30 13:04:24 (+05:30)" aria-label="2021-12-30 13:04:24 (+05:30)">Dec 30, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.20.0/">
+                <p class="release__version">
+                  3.20.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-12-30T04:34:48+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-12-30 10:04:48 (+05:30)" aria-label="2021-12-30 10:04:48 (+05:30)">Dec 30, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.19.0/">
+                <p class="release__version">
+                  3.19.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-12-29T13:02:56+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-12-29 18:32:56 (+05:30)" aria-label="2021-12-29 18:32:56 (+05:30)">Dec 29, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.18.0/">
+                <p class="release__version">
+                  3.18.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-11-17T07:27:40+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-11-17 12:57:40 (+05:30)" aria-label="2021-11-17 12:57:40 (+05:30)">Nov 17, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.17.1/">
+                <p class="release__version">
+                  3.17.1
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-11-08T05:38:57+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-11-08 11:08:57 (+05:30)" aria-label="2021-11-08 11:08:57 (+05:30)">Nov 8, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.17.0/">
+                <p class="release__version">
+                  3.17.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-06-15T04:13:56+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-06-15 09:43:56 (+05:30)" aria-label="2021-06-15 09:43:56 (+05:30)">Jun 15, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.16.0/">
+                <p class="release__version">
+                  3.16.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-06-08T04:30:27+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-06-08 10:00:27 (+05:30)" aria-label="2021-06-08 10:00:27 (+05:30)">Jun 8, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.15.0/">
+                <p class="release__version">
+                  3.15.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-05-28T12:48:26+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-05-28 18:18:26 (+05:30)" aria-label="2021-05-28 18:18:26 (+05:30)">May 28, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.14.0/">
+                <p class="release__version">
+                  3.14.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-04-04T14:18:34+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-04-04 19:48:34 (+05:30)" aria-label="2021-04-04 19:48:34 (+05:30)">Apr 4, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.13.0/">
+                <p class="release__version">
+                  3.13.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-01-24T16:31:51+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-01-24 22:01:51 (+05:30)" aria-label="2021-01-24 22:01:51 (+05:30)">Jan 24, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.12.1/">
+                <p class="release__version">
+                  3.12.1
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-01-24T16:12:04+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-01-24 21:42:04 (+05:30)" aria-label="2021-01-24 21:42:04 (+05:30)">Jan 24, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.12.0/">
+                <p class="release__version">
+                  3.12.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-01-24T15:09:28+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-01-24 20:39:28 (+05:30)" aria-label="2021-01-24 20:39:28 (+05:30)">Jan 24, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.11.0/">
+                <p class="release__version">
+                  3.11.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2021-01-19T17:57:15+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2021-01-19 23:27:15 (+05:30)" aria-label="2021-01-19 23:27:15 (+05:30)">Jan 19, 2021</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.10.2/">
+                <p class="release__version">
+                  3.10.2
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2020-08-09T09:38:59+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2020-08-09 15:08:59 (+05:30)" aria-label="2020-08-09 15:08:59 (+05:30)">Aug 9, 2020</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.10.1/">
+                <p class="release__version">
+                  3.10.1
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2020-06-26T07:38:01+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2020-06-26 13:08:01 (+05:30)" aria-label="2020-06-26 13:08:01 (+05:30)">Jun 26, 2020</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.10.0/">
+                <p class="release__version">
+                  3.10.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2020-06-09T07:15:19+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2020-06-09 12:45:19 (+05:30)" aria-label="2020-06-09 12:45:19 (+05:30)">Jun 9, 2020</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.9.0/">
+                <p class="release__version">
+                  3.9.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2020-06-07T13:53:19+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2020-06-07 19:23:19 (+05:30)" aria-label="2020-06-07 19:23:19 (+05:30)">Jun 7, 2020</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.8.1/">
+                <p class="release__version">
+                  3.8.1
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2020-05-06T07:04:10+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2020-05-06 12:34:10 (+05:30)" aria-label="2020-05-06 12:34:10 (+05:30)">May 6, 2020</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.8.0/">
+                <p class="release__version">
+                  3.8.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2020-05-06T05:22:13+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2020-05-06 10:52:13 (+05:30)" aria-label="2020-05-06 10:52:13 (+05:30)">May 6, 2020</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.7.0/">
+                <p class="release__version">
+                  3.7.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2020-03-01T14:43:17+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2020-03-01 20:13:17 (+05:30)" aria-label="2020-03-01 20:13:17 (+05:30)">Mar 1, 2020</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.6.0/">
+                <p class="release__version">
+                  3.6.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2020-02-24T06:53:37+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2020-02-24 12:23:37 (+05:30)" aria-label="2020-02-24 12:23:37 (+05:30)">Feb 24, 2020</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.5.0/">
+                <p class="release__version">
+                  3.5.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2019-12-14T08:09:19+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2019-12-14 13:39:19 (+05:30)" aria-label="2019-12-14 13:39:19 (+05:30)">Dec 14, 2019</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.4.0/">
+                <p class="release__version">
+                  3.4.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2019-12-13T14:16:33+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2019-12-13 19:46:33 (+05:30)" aria-label="2019-12-13 19:46:33 (+05:30)">Dec 13, 2019</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.3.0/">
+                <p class="release__version">
+                  3.3.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2019-12-13T13:20:21+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2019-12-13 18:50:21 (+05:30)" aria-label="2019-12-13 18:50:21 (+05:30)">Dec 13, 2019</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.2.0/">
+                <p class="release__version">
+                  3.2.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2019-10-09T10:45:29+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2019-10-09 16:15:29 (+05:30)" aria-label="2019-10-09 16:15:29 (+05:30)">Oct 9, 2019</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.1.1/">
+                <p class="release__version">
+                  3.1.1
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2019-10-07T06:04:26+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2019-10-07 11:34:26 (+05:30)" aria-label="2019-10-07 11:34:26 (+05:30)">Oct 7, 2019</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.1.0/">
+                <p class="release__version">
+                  3.1.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2019-10-07T05:46:48+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2019-10-07 11:16:48 (+05:30)" aria-label="2019-10-07 11:16:48 (+05:30)">Oct 7, 2019</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/3.0.0/">
+                <p class="release__version">
+                  3.0.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2019-08-29T04:49:42+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2019-08-29 10:19:42 (+05:30)" aria-label="2019-08-29 10:19:42 (+05:30)">Aug 29, 2019</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/2.0.1/">
+                <p class="release__version">
+                  2.0.1
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2019-08-23T03:02:33+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2019-08-23 08:32:33 (+05:30)" aria-label="2019-08-23 08:32:33 (+05:30)">Aug 23, 2019</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/2.0/">
+                <p class="release__version">
+                  2.0
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2019-08-06T15:02:19+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2019-08-06 20:32:19 (+05:30)" aria-label="2019-08-06 20:32:19 (+05:30)">Aug 6, 2019</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/1.0.4/">
+                <p class="release__version">
+                  1.0.4
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2018-02-10T03:40:02+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2018-02-10 09:10:02 (+05:30)" aria-label="2018-02-10 09:10:02 (+05:30)">Feb 10, 2018</time>
+                </p>
+              </a>
+            </div>
+            <div class="release">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/1.0.2/">
+                <p class="release__version">
+                  1.0.2
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2016-03-07T14:47:07+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2016-03-07 20:17:07 (+05:30)" aria-label="2016-03-07 20:17:07 (+05:30)">Mar 7, 2016</time>
+                </p>
+              </a>
+            </div>
+            <div class="release release--oldest">
+              <div class="release__meta">
+              </div>
+
+              <div class="release__graphic">
+                <div class="release__line"></div>
+                <img class="release__node" alt="" src="./Docs_files/white-cube.2351a86c.svg">
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/stockfish/1.0.1/">
+                <p class="release__version">
+                  1.0.1
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2016-02-05T08:07:11+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2016-02-05 13:37:11 (+05:30)" aria-label="2016-02-05 13:37:11 (+05:30)">Feb 5, 2016</time>
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+          <div id="files" data-project-tabs-target="content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="files-tab mobile-files-tab" tabindex="-1" style="display: none;">
+            <h2 class="page-title">Download files</h2>
+            <p>Download the file for your platform. If you're not sure which to choose, learn more about <a href="https://packaging.python.org/tutorials/installing-packages/" title="External link" target="_blank" rel="noopener">installing packages</a>.</p>
+            <h3>
+Source Distribution            </h3>
+
+                  <div class="file">
+      <div class="file__graphic">
+        <i class="far fa-file" aria-hidden="true"></i>
+      </div>
+
+      <div class="card file__card">
+        <a href="https://files.pythonhosted.org/packages/dc/bd/b06883b957530867179da3672fa3d8b87a08a1e3c11ca9737d94b60689d2/stockfish-3.28.0.tar.gz">
+          stockfish-3.28.0.tar.gz
+        </a>
+        (16.3 kB
+        <a href="https://pypi.org/project/stockfish/#copy-hash-modal-961cdc12-22f7-4d57-acf4-c9446f252dd8">view hashes</a>)
+        <p class="file__meta">
+          Uploaded <time datetime="2022-07-05T04:38:28+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-07-05 10:08:28 (+05:30)" aria-label="2022-07-05 10:08:28 (+05:30)">Jul 5, 2022</time>
+          <code>Source</code>
+        </p>
+      </div>
+    </div>
+
+
+            <h3>
+Built Distribution            </h3>
+
+                <div class="file">
+      <div class="file__graphic">
+        <i class="far fa-file" aria-hidden="true"></i>
+      </div>
+
+      <div class="card file__card">
+        <a href="https://files.pythonhosted.org/packages/95/b2/b3a204dd7754685fef5e62bf19b82d2572b321df619775502326cf7d383e/stockfish-3.28.0-py3-none-any.whl">
+          stockfish-3.28.0-py3-none-any.whl
+        </a>
+        (13.9 kB
+        <a href="https://pypi.org/project/stockfish/#copy-hash-modal-0d71a0d1-b42b-4b06-913b-e79fd20d4e84">view hashes</a>)
+        <p class="file__meta">
+          Uploaded <time datetime="2022-07-05T04:38:25+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" title="2022-07-05 10:08:25 (+05:30)" aria-label="2022-07-05 10:08:25 (+05:30)">Jul 5, 2022</time>
+          <code>Python 3</code>
+        </p>
+      </div>
+    </div>
+
+          </div>
+
+<div id="copy-hash-modal-961cdc12-22f7-4d57-acf4-c9446f252dd8" class="modal modal--wide">
+  <div class="modal__content" role="dialog">
+    <a href="https://pypi.org/project/stockfish/#modal-close" title="Close" class="modal__close">
+      <i class="fa fa-times" aria-hidden="true"></i>
+      <span class="sr-only">Close</span>
+    </a>
+    <div class="modal__body">
+      <h3 class="modal__title">
+<a href="https://pip.pypa.io/en/stable/topics/secure-installs/#hash-checking-mode" title="External link" target="_blank" rel="noopener">Hashes</a> for stockfish-3.28.0.tar.gz      </h3>
+      <table class="table table--hashes">
+        <caption class="sr-only">Hashes for stockfish-3.28.0.tar.gz</caption>
+        <thead>
+          <tr>
+            <th scope="col">Algorithm</th>
+            <th scope="col">Hash digest</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-controller="clipboard">
+            <th scope="row">SHA256</th>
+            <td><code data-clipboard-target="source">8764127c00434aa85b7fca1c064800e7ea907bb3626ccd4b583f0e911b014070</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard">
+Copy              </button>
+            </td>
+          </tr>
+          <tr data-controller="clipboard">
+            <th scope="row">MD5</th>
+            <td><code data-clipboard-target="source">628c58f0c182852bfe235af9da88afb3</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard">
+Copy              </button>
+            </td>
+          </tr>
+          <tr data-controller="clipboard">
+            <th scope="row">BLAKE2b-256</th>
+            <td><code data-clipboard-target="source">dcbdb06883b957530867179da3672fa3d8b87a08a1e3c11ca9737d94b60689d2</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard">
+Copy              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal__footer">
+      <a href="https://pypi.org/project/stockfish/#modal-close" class="button button--primary modal__action">Close</a>
+    </div>
+  </div>
+</div><div id="copy-hash-modal-0d71a0d1-b42b-4b06-913b-e79fd20d4e84" class="modal modal--wide">
+  <div class="modal__content" role="dialog">
+    <a href="https://pypi.org/project/stockfish/#modal-close" title="Close" class="modal__close">
+      <i class="fa fa-times" aria-hidden="true"></i>
+      <span class="sr-only">Close</span>
+    </a>
+    <div class="modal__body">
+      <h3 class="modal__title">
+<a href="https://pip.pypa.io/en/stable/topics/secure-installs/#hash-checking-mode" title="External link" target="_blank" rel="noopener">Hashes</a> for stockfish-3.28.0-py3-none-any.whl      </h3>
+      <table class="table table--hashes">
+        <caption class="sr-only">Hashes for stockfish-3.28.0-py3-none-any.whl</caption>
+        <thead>
+          <tr>
+            <th scope="col">Algorithm</th>
+            <th scope="col">Hash digest</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-controller="clipboard">
+            <th scope="row">SHA256</th>
+            <td><code data-clipboard-target="source">e432e57112448fe1271dff402db3a4747bf00d1721815ce0a36cfa26582cf360</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard">
+Copy              </button>
+            </td>
+          </tr>
+          <tr data-controller="clipboard">
+            <th scope="row">MD5</th>
+            <td><code data-clipboard-target="source">524fe23e7ed83bd800564309cbf742a3</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard">
+Copy              </button>
+            </td>
+          </tr>
+          <tr data-controller="clipboard">
+            <th scope="row">BLAKE2b-256</th>
+            <td><code data-clipboard-target="source">95b2b3a204dd7754685fef5e62bf19b82d2572b321df619775502326cf7d383e</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard">
+Copy              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal__footer">
+      <a href="https://pypi.org/project/stockfish/#modal-close" class="button button--primary modal__action">Close</a>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__logo">
+        <img src="./Docs_files/white-cube.2351a86c.svg" alt="" class="-js-white-cube">
+      </div>
+
+      <div class="footer__menus">
+        <div class="footer__menu">
+          <h2>Help</h2>
+          <nav aria-label="Help navigation">
+            <ul>
+              <li><a href="https://packaging.python.org/tutorials/installing-packages/" title="External link" target="_blank" rel="noopener">Installing packages</a></li>
+              <li><a href="https://packaging.python.org/tutorials/packaging-projects/" title="External link" target="_blank" rel="noopener">Uploading packages</a></li>
+              <li><a href="https://packaging.python.org/" title="External link" target="_blank" rel="noopener">User guide</a></li>
+              <li><a href="https://www.python.org/dev/peps/pep-0541/" title="External link" target="_blank" rel="noopener">Project name retention</a></li>
+              <li><a href="https://pypi.org/help/">FAQs</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__menu">
+          <h2>About PyPI</h2>
+          <nav aria-label="About PyPI navigation">
+            <ul>
+              <li><a href="https://blog.pypi.org/" title="External link" target="_blank" rel="noopener">PyPI Blog</a></li>
+              <li><a href="https://dtdg.co/pypi" title="External link" target="_blank" rel="noopener">Infrastructure dashboard</a></li>
+              <li><a href="https://pypi.org/stats/">Statistics</a></li>
+              <li><a href="https://pypi.org/trademarks/">Logos &amp; trademarks</a></li>
+              <li><a href="https://pypi.org/sponsors/">Our sponsors</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__menu">
+          <h2>Contributing to PyPI</h2>
+          <nav aria-label="How to contribute navigation">
+            <ul>
+              <li><a href="https://pypi.org/help/#feedback">Bugs and feedback</a></li>
+              <li><a href="https://github.com/pypi/warehouse" title="External link" target="_blank" rel="noopener">Contribute on GitHub</a></li>
+              <li><a href="https://hosted.weblate.org/projects/pypa/warehouse/" title="External link" target="_blank" rel="noopener">Translate PyPI</a></li>
+              <li><a href="https://pypi.org/sponsors/">Sponsor PyPI</a></li>
+              <li><a href="https://github.com/pypi/warehouse/graphs/contributors" title="External link" target="_blank" rel="noopener">Development credits</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__menu">
+          <h2>Using PyPI</h2>
+          <nav aria-label="Using PyPI navigation">
+            <ul>
+              <li><a href="https://policies.python.org/python.org/code-of-conduct/" title="External link" target="_blank" rel="noopener">Code of conduct</a></li>
+              <li><a href="https://pypi.org/security/">Report security issue</a></li>
+              <li><a href="https://www.python.org/privacy/" title="External link" target="_blank" rel="noopener">Privacy policy</a></li>
+              <li><a href="https://policies.python.org/pypi.org/Terms-of-Use/" title="External link" target="_blank" rel="noopener">Terms of Use</a></li>
+              <li><a href="https://policies.python.org/pypi.org/Acceptable-Use-Policy/" title="External link" target="_blank" rel="noopener">Acceptable Use Policy</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <hr class="footer__divider">
+
+      <div class="footer__text">
+        <p>Status:<a href="https://status.python.org/" title="External link" target="_blank" rel="noopener">
+          <span data-statuspage-domain="https://2p66nmmycsj3.statuspage.io">All Systems Operational</span></a>
+        </p>
+        <p>
+Developed and maintained by the Python community, for the Python community.          <br>
+          <a href="https://donate.pypi.org/">Donate today!</a>
+        </p>
+        <p>
+          "PyPI", "Python Package Index", and the blocks logos are registered <a href="https://pypi.org/trademarks/">trademarks</a> of the <a href="https://www.python.org/psf-landing" target="_blank" rel="noopener">Python Software Foundation</a>.<br>
+        </p>
+        <p>
+          © 2024 <a href="https://www.python.org/psf-landing/" title="External link" target="_blank" rel="noopener">Python Software Foundation</a><br>
+          <a href="https://pypi.org/sitemap/">Site map</a>
+        </p>
+      </div>
+
+      <div class="centered hide-on-desktop">
+        <button type="button" class="button button--switch-to-desktop" data-viewport-toggle-target="switchToDesktop" data-action="viewport-toggle#switchToDesktop">
+Switch to desktop version        </button>
+      </div>
+    </footer>
+
+
+    <div class="language-switcher">
+      <form action="https://pypi.org/locale/">
+        <ul>
+          <li>
+            <button class="language-switcher__selected" name="locale_id" value="en" type="submit">
+              English
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="es" type="submit">
+              español
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="fr" type="submit">
+              français
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="ja" type="submit">
+              日本語
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="pt_BR" type="submit">
+              português (Brasil)
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="uk" type="submit">
+              українська
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="el" type="submit">
+              Ελληνικά
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="de" type="submit">
+              Deutsch
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="zh_Hans" type="submit">
+              中文 (简体)
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="zh_Hant" type="submit">
+              中文 (繁體)
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="ru" type="submit">
+              русский
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="he" type="submit">
+              עברית
+            </button>
+          </li>
+          <li>
+            <button name="locale_id" value="eo" type="submit">
+              Esperanto
+            </button>
+          </li>
+        </ul>
+      </form>
+    </div>
+
+
+<div class="sponsors">
+  <p class="sponsors__title">Supported by</p>
+  <div class="sponsors__divider"></div>
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://aws.amazon.com/">
+          <img class="sponsors__image" src="./Docs_files/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f6177732d77686974652d6c6f676f2d7443615473387a432e706e67" alt="AWS" loading="lazy">
+          <span class="sponsors__name">AWS</span>
+          <span class="sponsors__service">
+            Cloud computing and Security Sponsor
+          </span>
+        </a>
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.datadoghq.com/">
+          <img class="sponsors__image" src="./Docs_files/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f64617461646f672d77686974652d6c6f676f2d6668644c4e666c6f2e706e67" alt="Datadog" loading="lazy">
+          <span class="sponsors__name">Datadog</span>
+          <span class="sponsors__service">
+            Monitoring
+          </span>
+        </a>
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.fastly.com/">
+          <img class="sponsors__image" src="./Docs_files/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f666173746c792d77686974652d6c6f676f2d65684d3077735f6f2e706e67" alt="Fastly" loading="lazy">
+          <span class="sponsors__name">Fastly</span>
+          <span class="sponsors__service">
+            CDN
+          </span>
+        </a>
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://careers.google.com/">
+          <img class="sponsors__image" src="./Docs_files/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f676f6f676c652d77686974652d6c6f676f2d616734424e3774332e706e67" alt="Google" loading="lazy">
+          <span class="sponsors__name">Google</span>
+          <span class="sponsors__service">
+            Download Analytics
+          </span>
+        </a>
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.python.org/psf/sponsors/#microsoft">
+          <img class="sponsors__image" src="./Docs_files/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f6d6963726f736f66742d77686974652d6c6f676f2d5a443172685444462e706e67" alt="Microsoft" loading="lazy">
+          <span class="sponsors__name">Microsoft</span>
+          <span class="sponsors__service">
+            PSF Sponsor
+          </span>
+        </a>
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.pingdom.com/">
+          <img class="sponsors__image" src="./Docs_files/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f70696e67646f6d2d77686974652d6c6f676f2d67355831547546362e706e67" alt="Pingdom" loading="lazy">
+          <span class="sponsors__name">Pingdom</span>
+          <span class="sponsors__service">
+            Monitoring
+          </span>
+        </a>
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://getsentry.com/for/python">
+          <img class="sponsors__image" src="./Docs_files/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f73656e7472792d77686974652d6c6f676f2d4a2d6b64742d706e2e706e67" alt="Sentry" loading="lazy">
+          <span class="sponsors__name">Sentry</span>
+          <span class="sponsors__service">
+            Error logging
+          </span>
+        </a>
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://statuspage.io/">
+          <img class="sponsors__image" src="./Docs_files/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f737461747573706167652d77686974652d6c6f676f2d5467476c6a4a2d502e706e67" alt="StatusPage" loading="lazy">
+          <span class="sponsors__name">StatusPage</span>
+          <span class="sponsors__service">
+            Status page
+          </span>
+        </a>
+</div>
+  
+
+</body></html>

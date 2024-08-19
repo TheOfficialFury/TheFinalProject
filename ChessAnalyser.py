@@ -11,6 +11,7 @@ choice = 0
 inputFEN = ""
 analyseChoice = 0
 bestMoves = 0
+topMoveList = []
 
 #Main Logic
 while True:
@@ -21,6 +22,7 @@ while True:
     inputFEN = ""
     analyseChoice = 0
     bestMoves = 0
+    topMoveList = []
     
     if appstate == 0:
         
@@ -31,6 +33,7 @@ while True:
               1) Analyse Position from FEN
               2) Play against Stockfish 16.1
               3) Analyse position from input
+              4) Exit program
               ''')
               
         #Getting input from user.
@@ -46,10 +49,8 @@ while True:
             appstate = 2
         if choice == 3:
             appstate = 3
-        if choice == -1:
-            break
-        
-        
+        if choice == 4:
+            break        
         
     if appstate == 1:
         inputFEN = input("Please enter the FEN of the position you wish to evaluate - ")
@@ -74,16 +75,19 @@ while True:
                     print(stockfish.get_board_visual())
                 elif analyseChoice == 2:
                     if stockfish.get_evaluation()["type"] == "cp":
-                        print("This position is evaluated as :", (float(stockfish.get_board_visual()["value"]) / 100))
-                    elif stockfish.get_board_visual()["type"] == "mate":
-                        if stockfish.get_board_visual()["value"] > 0:
-                            print("This position is evaluated as forced checkmate in ", stockfish.get_board_visual()["value"])
-                        if stockfish.get_board_visual()["value"] < 0:
-                            print("This position is evaluated as forced checkmate in ", (stockfish.get_board_visual()["value"] * (-1)))
+                        print("This position is evaluated as :", (float(stockfish.get_evaluation()["value"]) / 100))
+                    elif stockfish.get_evaluation()["type"] == "mate":
+                        if stockfish.get_evaluation()["value"] > 0:
+                            print("This position is evaluated as forced checkmate in ", stockfish.get_evaluation()["value"])
+                        if stockfish.get_evaluation()["value"] < 0:
+                            print("This position is evaluated as forced checkmate in ", (stockfish.get_evaluation()["value"] * (-1)))
                 elif analyseChoice == 3:
                     try:
                         bestMoves = int(input("Please enter the number of best moves you wish to get - "))
-                        print(stockfish.get_top_moves(bestMoves))
+                        print("The top", bestMoves, "moves in this position are as follows - ")
+                        topMoveList = stockfish.get_top_moves(bestMoves)
+                        for x in topMoveList:
+                            print(int(topMoveList.index(x) + 1), "- Move :", x["Move"], "( Evaluation -", (x['Centipawn'] / 100), ")")
                     except:
                         print("Please enter a valid input.")
                 elif analyseChoice == 4:

@@ -12,6 +12,8 @@ inputFEN = ""
 analyseChoice = 0
 bestMoves = 0
 topMoveList = []
+playChoice = 0
+colorChoice = 0
 
 #Main Logic
 while True:
@@ -23,6 +25,8 @@ while True:
     analyseChoice = 0
     bestMoves = 0
     topMoveList = []
+    playChoice = 0
+    colorChoice = 0
     
     if appstate == 0:
         
@@ -94,3 +98,34 @@ while True:
                     print("The best move in this position is -", str(stockfish.get_best_move()))
                 elif analyseChoice == 5:
                     appstate = 0
+                    
+                    
+    if appstate == 2:
+        
+        #Showing text-based menu.
+        print('''
+              Please choose one of the following - 
+              
+              1) Play from starting position
+              2) Play from custom position
+              ''')
+              
+        #Getting input from user.
+        try:
+            playChoice = int(input("Please enter the menu item number corresponding to what you want to do - "))
+        except:
+            print("Please enter a valid input.")
+        
+        if playChoice == 1:
+            print('''
+                  Please choose one of the following -
+                  
+                  1) White
+                  2) Black
+                  ''')
+                  
+            try:
+                colorChoice = int(input("Please enter the menu item number corresponding to what you want to do - "))
+            except:
+                print("Please enter a valid input.")
+            

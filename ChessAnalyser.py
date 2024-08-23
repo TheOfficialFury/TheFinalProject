@@ -16,6 +16,12 @@ playChoice = 0
 colorChoice = 0
 moveChoice = ""
 
+def checkformate():
+    if stockfish.get_evaluation()["type"] == 'mate' and stockfish.get_evaluation()["value"] == 0:
+        return True
+    else:
+        return False
+
 #Main Logic
 while True:
     
@@ -29,6 +35,7 @@ while True:
     playChoice = 0
     colorChoice = 0
     moveChoice = ""
+    stockfish.set_fen_position("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
     
     if appstate == 0:
         
@@ -131,9 +138,7 @@ while True:
             except:
                 print("Please enter a valid input.")
             
-            if playChoice == 1:
-                print(stockfish.get_board_visual())
-                moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
+            if colorChoice == 1:
                 while True:
                     print(stockfish.get_board_visual())
                     moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
@@ -144,3 +149,75 @@ while True:
                               To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.''')
                     elif str(moveChoice.lower()) == 'exit':
                         break
+                    elif stockfish.is_move_correct(moveChoice):
+                            stockfish.make_moves_from_current_position([str(moveChoice)])
+                            print("White (user) plays the move -", moveChoice)
+                            if checkformate() == True:
+                                print("White checkmates Black!")
+                                print(stockfish.get_board_visual())
+                                break
+                            print("Black (Stockfish) plays the move -", stockfish.get_best_move())
+                            stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                            if checkformate() == True:
+                                print("Black checkmates White!")
+                                print(stockfish.get_board_visual())
+                                break
+                    else:
+                        print("Please enter a valid input.")
+            elif colorChoice == 2:
+                print("White () plays the move -", stockfish.get_best_move())
+                stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                while True:
+                    print(stockfish.get_board_visual(perspective_white=False))
+                    moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
+                    if str(moveChoice.lower()) == 'help':
+                        print('''
+                              Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
+                              
+                              To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.''')
+                    elif str(moveChoice.lower()) == 'exit':
+                        break
+                    elif stockfish.is_move_correct(moveChoice):
+                            stockfish.make_moves_from_current_position([str(moveChoice)])
+                            print("Black (user) plays the move -", moveChoice)
+                            if checkformate() == True:
+                                print("Black checkmates White!")
+                                print(stockfish.get_board_visual(perspective_white=False))
+                                break
+                            print("White (Stockfish) plays the move -", stockfish.get_best_move())
+                            stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                            if checkformate() == True:
+                                print("White checkmates Black!")
+                                print(stockfish.get_board_visual(perspective_white=False))
+                                break
+                    else:
+                        print("Please enter a valid input.")
+                print("White (Stockfish) plays the move -", stockfish.get_best_move())
+                stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                while True:
+                    print(stockfish.get_board_visual(perspective_white=False))
+                    moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
+                    if str(moveChoice.lower()) == 'help':
+                        print('''
+                              Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
+                              
+                              To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.''')
+                    elif str(moveChoice.lower()) == 'exit':
+                        break
+                    elif stockfish.is_move_correct(moveChoice):
+                            stockfish.make_moves_from_current_position([str(moveChoice)])
+                            print("Black (user) plays the move -", moveChoice)
+                            if checkformate() == True:
+                                print("Black checkmates White!")
+                                print(stockfish.get_board_visual(perspective_white=False))
+                                break
+                            print("White (Stockfish) plays the move -", stockfish.get_best_move())
+                            stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                            if checkformate() == True:
+                                print("White checkmates Black!")
+                                print(stockfish.get_board_visual(perspective_white=False))
+                                break
+                    else:
+                        print("Please enter a valid input.")
+            else:
+                print("Not a valid input.")

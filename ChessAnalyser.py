@@ -14,6 +14,7 @@ bestMoves = 0
 topMoveList = []
 playChoice = 0
 colorChoice = 0
+moveChoice = ""
 
 #Main Logic
 while True:
@@ -27,6 +28,7 @@ while True:
     topMoveList = []
     playChoice = 0
     colorChoice = 0
+    moveChoice = ""
     
     if appstate == 0:
         
@@ -129,3 +131,16 @@ while True:
             except:
                 print("Please enter a valid input.")
             
+            if playChoice == 1:
+                print(stockfish.get_board_visual())
+                moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
+                while True:
+                    print(stockfish.get_board_visual())
+                    moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
+                    if str(moveChoice.lower()) == 'help':
+                        print('''
+                              Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
+                              
+                              To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.''')
+                    elif str(moveChoice.lower()) == 'exit':
+                        break

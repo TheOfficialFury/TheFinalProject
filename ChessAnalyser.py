@@ -141,10 +141,10 @@ Please select one of the followung -
         
         #Showing text-based menu.
         print('''
-              Please choose one of the following - 
-              
-              1) Play from starting position
-              2) Play from custom position
+Please choose one of the following - 
+
+1) Play from starting position
+2) Play from custom position
               ''')
               
         #Getting input from user.
@@ -156,10 +156,10 @@ Please select one of the followung -
         # Asking for color choice.
         if playChoice == 1:
             print('''
-                  Please choose one of the following -
-                  
-                  1) White
-                  2) Black
+Please choose one of the following -
+
+1) White
+2) Black
                   ''')
                   
             # Taking input.
@@ -175,9 +175,10 @@ Please select one of the followung -
                     moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
                     if str(moveChoice.lower()) == 'help':
                         print('''
-                              Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
-                              
-                              To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.''')
+Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
+
+To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.
+''')
                     elif str(moveChoice.lower()) == 'exit':
                         break
                     elif stockfish.is_move_correct(moveChoice):
@@ -204,9 +205,10 @@ Please select one of the followung -
                     moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
                     if str(moveChoice.lower()) == 'help':
                         print('''
-                              Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
-                              
-                              To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.''')
+Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
+
+To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.
+''')
                     elif str(moveChoice.lower()) == 'exit':
                         break
                     elif stockfish.is_move_correct(moveChoice):
@@ -231,9 +233,10 @@ Please select one of the followung -
                     moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
                     if str(moveChoice.lower()) == 'help':
                         print('''
-                              Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
-                              
-                              To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.''')
+Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
+
+To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.
+''')
                     elif str(moveChoice.lower()) == 'exit':
                         break
                     elif stockfish.is_move_correct(moveChoice):

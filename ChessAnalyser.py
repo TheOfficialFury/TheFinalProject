@@ -15,6 +15,9 @@ topMoveList = []
 playChoice = 0
 colorChoice = 0
 moveChoice = ""
+inputChoice = 0
+moveIter = 0
+moveFrame = []
 
 def checkformate():
     if stockfish.get_evaluation()["type"] == 'mate' and stockfish.get_evaluation()["value"] == 0:
@@ -35,6 +38,9 @@ while True:
     playChoice = 0
     colorChoice = 0
     moveChoice = ""
+    inputChoice = 0
+    moveIter = 0
+    moveFrame = []
     stockfish.set_fen_position("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
     
     if appstate == 0:
@@ -221,3 +227,76 @@ while True:
                         print("Please enter a valid input.")
             else:
                 print("Not a valid input.")
+                
+                
+                
+                
+    if appstate == 3:
+        print('''
+              Please choose one of the following - 
+              
+              1) Enter game move-by-move
+              2) Import from CSV file (must be in correct format)
+              ''')
+              
+        #Getting input from user.
+        try:
+            inputChoice = int(input("Please enter the menu item number corresponding to what you want to do - "))
+        except:
+            print("Please enter a valid input.")
+            
+        if inputChoice == 1:
+            while True:
+                moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
+                if str(moveChoice.lower()) == 'help':
+                    print('''
+                          Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
+                          
+                          To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.''')
+                elif str(moveChoice.lower()) == 'exit':
+                    break
+                elif stockfish.is_move_correct(moveChoice):
+                    stockfish.make_moves_from_current_position([str(moveChoice)])
+                    
+                    # Recording moves.
+                    if moveIter == 0:  
+                        moveFrame.append([moveChoice])
+                        moveIter = 1
+                    elif moveIter == 1: 
+                        moveFrame[-1].append(moveChoice)
+                        moveIter = 0
+                    
+                    # Evaluation
+                    if stockfish.get_evaluation()['type'] == 'cp':
+                        print("Evaluation -", str(stockfish.get_evaluation()['value'] / 100))
+                        print("Best move -", str(stockfish.get_best_move()))
+                    elif checkformate():
+                        print("Checkmate!")
+                        print(stockfish.get_board_visual())
+                        if input("Please enter 1 if you would like to save the moves in this game as CSV - ") == "1":
+                            moveFrame = pd.DataFrame(moveFrame, columns=["White", "Black"])
+                            while True:
+                                try:
+                                    moveFrame.to_csv(str((input("Please enter a filename - ") + ".csv")))
+                                    print("Saved successfully!")
+                                    break
+                                except:
+                                    print("Please enter a valid input.")
+                            break
+                    elif stockfish.get_evaluation()['type'] == 'mate':
+                        print("Evaluation - Mate in", str(stockfish.get_evaluation()['value']))
+                        print("Best move -", str(stockfish.get_best_move()))
+                    
+                    print(stockfish.get_board_visual())
+                
+                
+        
+                
+                
+                
+                
+                
+                
+                
+                
+                

@@ -187,7 +187,6 @@ Please select one of the following -
 1) Use an FEN
 2) Import from CSV
                      ''')
-            
                 importChoice = int(input("Please enter the menu item number corresponding to what you want to do - "))
                 if importChoice == 1:
                     while True:
@@ -207,11 +206,9 @@ Please select one of the following -
                     path = input("Please enter the path to the CSV file - ")
                     
                     while True:
-                        
                         # Check for path accuracy import data.
                         try:
                             CSVmove = pd.read_csv(path)
-                            
                             # Convert data to usable format.
                             for x in CSVmove.T:
                                 if list(CSVmove.T[x])[1] != np.NaN:
@@ -220,12 +217,9 @@ Please select one of the following -
                                     if type(list(CSVmove.T[x])[2]) == str:
                                         stockfish.make_moves_from_current_position([str(list(CSVmove.T[x])[2])])
                                         moveFrame[-1].append(str(list(CSVmove.T[x])[2]))
-                            
                             # No need to loop again.
                             break
-                        
                         except:
-                            
                             # Show error message.
                             print("Please enter a valid path or CSV.")
                             break
@@ -240,8 +234,7 @@ Please select one of the following -
                         print("Stockfish plays the move -", stockfish.get_best_move())
                         stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
                         seeboard()
-                    
-            
+                                
                 while True:
                     # Asking for input.
                     if moveIter == 0:
@@ -250,8 +243,6 @@ Please select one of the following -
                         if str(moveChoice.lower()) == 'help':
                             print('''
 Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
-
-To see a comprehensive analysis history of all the moves played so far, type 'eval'.
 
 To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.
                             ''')
@@ -273,7 +264,7 @@ To exit play, please enter 'exit'. To this help at any point during the game, ty
                         moveIter = 0
                     
                     # Print the board.
-                    print(stockfish.get_board_visual())                     
+                    seeboard()             
       
     if appstate == 3:
         

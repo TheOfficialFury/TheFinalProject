@@ -15,6 +15,12 @@ def checkformate():
     else:
         return False
 
+def seeboard():
+    if colorCharacter == "b":
+        print(stockfish.get_board_visual(perspective_white=False))
+    else:
+        print(stockfish.get_board_visual())
+
 #Main Logic
 while True:
     
@@ -34,7 +40,9 @@ while True:
     CSVmove = ""
     moveList = []
     evalMove = []
-    howmanymoves = 0
+    howmanymoves = []
+    importChoice = 0
+    colorCharacter = ""
     
     # Resetting board position.
     stockfish.set_fen_position("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
@@ -82,7 +90,7 @@ while True:
                 
                 # Prining text menu for choices.
                 print('''
-Please select one of the followung - 
+Please select one of the following - 
 
 1) Show board visual (in ASCII format)
 2) Evaluate the position
@@ -135,8 +143,7 @@ Please select one of the followung -
                     
                     # Break loop.
                     break
-                    
-                    
+      
     if appstate == 2:
         
         #Showing text-based menu.
@@ -154,7 +161,7 @@ Please choose one of the following -
             print("Please enter a valid input.")
         
         # Asking for color choice.
-        if playChoice == 1:
+        if playChoice == 1 or playChoice == 2:
             print('''
 Please choose one of the following -
 
@@ -167,99 +174,107 @@ Please choose one of the following -
                 colorChoice = int(input("Please enter the menu item number corresponding to what you want to do - "))
             except:
                 print("Please enter a valid input.")
-            
-            # Logic for when user choose white.
+                
             if colorChoice == 1:
-                while True:
-                    print(stockfish.get_board_visual())
-                    moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
-                    if str(moveChoice.lower()) == 'help':
-                        print('''
-Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
-
-To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.
-''')
-                    elif str(moveChoice.lower()) == 'exit':
-                        break
-                    elif stockfish.is_move_correct(moveChoice):
-                            stockfish.make_moves_from_current_position([str(moveChoice)])
-                            print("White (user) plays the move -", moveChoice)
-                            if checkformate() == True:
-                                print("White checkmates Black!")
-                                print(stockfish.get_board_visual())
-                                break
-                            print("Black (Stockfish) plays the move -", stockfish.get_best_move())
-                            stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
-                            if checkformate() == True:
-                                print("Black checkmates White!")
-                                print(stockfish.get_board_visual())
-                                break
-                    else:
-                        print("Please enter a valid input.")
-                        
+                colorCharacter = "w"
             elif colorChoice == 2:
-                print("White () plays the move -", stockfish.get_best_move())
-                stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                colorCharacter = "b"
+            
+            if playChoice == 2:
+                print('''
+Please select one of the following - 
+
+1) Use an FEN
+2) Import from CSV
+                     ''')
+            
+                importChoice = int(input("Please enter the menu item number corresponding to what you want to do - "))
+                if importChoice == 1:
+                    while True:
+                        inputFEN = input("Please enter an FEN - ")
+                        if stockfish.is_fen_valid(inputFEN):
+                            stockfish.set_fen_position(inputFEN)
+                            if inputFEN[-12] != colorCharacter:
+                                seeboard()
+                                print("Stockfish plays the move -", stockfish.get_best_move())   
+                                stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                                seeboard()
+                            break
+                        else:
+                            print("Please enter a valid FEN.")
+                elif importChoice == 2:
+                    # Grabbing path to CSV.
+                    path = input("Please enter the path to the CSV file - ")
+                    
+                    while True:
+                        
+                        # Check for path accuracy import data.
+                        try:
+                            CSVmove = pd.read_csv(path)
+                            
+                            # Convert data to usable format.
+                            for x in CSVmove.T:
+                                if list(CSVmove.T[x])[1] != np.NaN:
+                                    stockfish.make_moves_from_current_position([str(list(CSVmove.T[x])[1])])
+                                    moveFrame.append([str(list(CSVmove.T[x])[1])])
+                                    if type(list(CSVmove.T[x])[2]) == str:
+                                        stockfish.make_moves_from_current_position([str(list(CSVmove.T[x])[2])])
+                                        moveFrame[-1].append(str(list(CSVmove.T[x])[2]))
+                            
+                            # No need to loop again.
+                            break
+                        
+                        except:
+                            
+                            # Show error message.
+                            print("Please enter a valid path or CSV.")
+                            break
+                    
+                    seeboard()
+                    
+                    if colorCharacter == "w" and len(moveFrame[-1]) == 1:
+                        print("Stockfish plays the move -", stockfish.get_best_move())    
+                        stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                        seeboard()
+                    elif colorCharacter == "b" and len(moveFrame[-1]) == 2:
+                        print("Stockfish plays the move -", stockfish.get_best_move())
+                        stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                        seeboard()
+                    
+            
                 while True:
-                    print(stockfish.get_board_visual(perspective_white=False))
-                    moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
-                    if str(moveChoice.lower()) == 'help':
-                        print('''
+                    # Asking for input.
+                    if moveIter == 0:
+                        moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
+                        # Display help message.
+                        if str(moveChoice.lower()) == 'help':
+                            print('''
 Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
 
-To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.
-''')
-                    elif str(moveChoice.lower()) == 'exit':
-                        break
-                    elif stockfish.is_move_correct(moveChoice):
-                            stockfish.make_moves_from_current_position([str(moveChoice)])
-                            print("Black (user) plays the move -", moveChoice)
-                            if checkformate() == True:
-                                print("Black checkmates White!")
-                                print(stockfish.get_board_visual(perspective_white=False))
-                                break
-                            print("White (Stockfish) plays the move -", stockfish.get_best_move())
-                            stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
-                            if checkformate() == True:
-                                print("White checkmates Black!")
-                                print(stockfish.get_board_visual(perspective_white=False))
-                                break
-                    else:
-                        print("Please enter a valid input.")
-                print("White (Stockfish) plays the move -", stockfish.get_best_move())
-                stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
-                while True:
-                    print(stockfish.get_board_visual(perspective_white=False))
-                    moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
-                    if str(moveChoice.lower()) == 'help':
-                        print('''
-Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
+To see a comprehensive analysis history of all the moves played so far, type 'eval'.
 
 To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.
-''')
-                    elif str(moveChoice.lower()) == 'exit':
-                        break
-                    elif stockfish.is_move_correct(moveChoice):
+                            ''')
+                            
+                        # Exit option.
+                        elif str(moveChoice.lower()) == 'exit':
+                            break
+                        
+                        # Incase an actual move is entered, do the following.
+                        elif stockfish.is_move_correct(moveChoice):
+                            
+                            # Update the board.
                             stockfish.make_moves_from_current_position([str(moveChoice)])
-                            print("Black (user) plays the move -", moveChoice)
-                            if checkformate() == True:
-                                print("Black checkmates White!")
-                                print(stockfish.get_board_visual(perspective_white=False))
-                                break
-                            print("White (Stockfish) plays the move -", stockfish.get_best_move())
-                            stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
-                            if checkformate() == True:
-                                print("White checkmates Black!")
-                                print(stockfish.get_board_visual(perspective_white=False))
-                                break
-                    else:
-                        print("Please enter a valid input.")
-            else:
-                print("Not a valid input.")
-                
-                
-                
-                
+                                
+                            moveIter = 1
+                    elif moveIter == 1:
+                        print("Stockfish plays the move -", stockfish.get_best_move())   
+                        stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                        moveIter = 0
+                    
+                    # Print the board.
+                    print(stockfish.get_board_visual())                     
+      
     if appstate == 3:
         
         # Print the menu.
@@ -380,6 +395,7 @@ To exit play, please enter 'exit'. To this help at any point during the game, ty
                         
                         else:
                             print("Exiting without saving...")
+                            break
                             
                     elif stockfish.get_evaluation()['type'] == 'mate':
                         
@@ -430,3 +446,6 @@ To exit play, please enter 'exit'. To this help at any point during the game, ty
                     plt.xlabel("Moves")
                     plt.ylabel("Evaluation")
                     plt.show()
+                    
+                else:
+                    print("Please enter a valid move/command.")

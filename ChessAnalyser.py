@@ -211,7 +211,7 @@ Please select one of the following -
                             CSVmove = pd.read_csv(path)
                             # Convert data to usable format.
                             for x in CSVmove.T:
-                                if list(CSVmove.T[x])[1] != np.NaN:
+                                if list(CSVmove.T[x])[1] != np.nan:
                                     stockfish.make_moves_from_current_position([str(list(CSVmove.T[x])[1])])
                                     moveFrame.append([str(list(CSVmove.T[x])[1])])
                                     if type(list(CSVmove.T[x])[2]) == str:
@@ -290,6 +290,7 @@ Please choose one of the following -
                 
                 # Grabbing path to CSV.
                 path = input("Please enter the path to the CSV file (or type 'exit' to leave this section) - ")
+                print(path)
                 
                 # Adding option to abort.
                 if path == "exit":
@@ -300,12 +301,12 @@ Please choose one of the following -
                     while True:
                         
                         # Check for path accuracy import data.
-                        try:
-                            CSVmove = pd.read_csv(path)
+                        # try:
+                            CSVmove = pd.read_csv(str(".\\" + path))
                             
                             # Convert data to usable format.
                             for x in CSVmove.T:
-                                if list(CSVmove.T[x])[1] != np.NaN:
+                                if list(CSVmove.T[x])[1] != np.nan:
                                     stockfish.make_moves_from_current_position([str(list(CSVmove.T[x])[1])])
                                     moveFrame.append([str(list(CSVmove.T[x])[1])])
                                     if type(list(CSVmove.T[x])[2]) == str:
@@ -315,11 +316,11 @@ Please choose one of the following -
                             # No need to loop again.
                             break
                         
-                        except:
+                        # except:
                             
-                            # Show erroe message.
-                            print("Please enter a valid path or CSV, or type 'exit' to exit this section.")
-                            break
+                        #     # Show erroe message.
+                        #     print("Please enter a valid path or CSV, or type 'exit' to exit this section.")
+                        #     break
                         
             # Start loop once all prior conditions are fulfilled (if any).
             while True:
@@ -410,7 +411,7 @@ To exit play, please enter 'exit'. To this help at any point during the game, ty
                     
                     # Iterating through move data and evaluating each position.
                     for x in moveFrame.T:
-                        if list(moveFrame.T[x])[0] != np.NaN:
+                        if list(moveFrame.T[x])[0] != np.nan:
                             stockfish.make_moves_from_current_position([str(list(moveFrame.T[x])[0])])
                             evalMove.append(stockfish.get_evaluation())
                             if type(list(moveFrame.T[x])[1]) == str:

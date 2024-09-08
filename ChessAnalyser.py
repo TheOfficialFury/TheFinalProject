@@ -290,7 +290,6 @@ Please choose one of the following -
                 
                 # Grabbing path to CSV.
                 path = input("Please enter the path to the CSV file (or type 'exit' to leave this section) - ")
-                print(path)
                 
                 # Adding option to abort.
                 if path == "exit":
@@ -301,7 +300,7 @@ Please choose one of the following -
                     while True:
                         
                         # Check for path accuracy import data.
-                        # try:
+                        try:
                             CSVmove = pd.read_csv(str(".\\" + path))
                             
                             # Convert data to usable format.
@@ -316,11 +315,11 @@ Please choose one of the following -
                             # No need to loop again.
                             break
                         
-                        # except:
+                        except:
                             
-                        #     # Show erroe message.
-                        #     print("Please enter a valid path or CSV, or type 'exit' to exit this section.")
-                        #     break
+                            # Show erroe message.
+                            print("Please enter a valid path or CSV, or type 'exit' to exit this section.")
+                            break
                         
             # Start loop once all prior conditions are fulfilled (if any).
             while True:

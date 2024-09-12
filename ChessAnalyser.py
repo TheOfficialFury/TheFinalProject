@@ -235,36 +235,36 @@ Please select one of the following -
                         stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
                         seeboard()
                                 
-                while True:
-                    # Asking for input.
-                    if moveIter == 0:
-                        moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
-                        # Display help message.
-                        if str(moveChoice.lower()) == 'help':
-                            print('''
+            while True:
+                # Asking for input.
+                if moveIter == 0:
+                    moveChoice = input("Please enter your move (or type 'help' if you dont know what to do) - ")
+                    # Display help message.
+                    if str(moveChoice.lower()) == 'help':
+                        print('''
 Please enter moves in the format [present square of piece][future square of piece]. For example, to move a pawn to e4 from e2, enter 'e2e4'. Moves need not specify the piece being moved. Only the squares from where to where the piece is moving.
 
 To exit play, please enter 'exit'. To this help at any point during the game, type 'help'.
-                            ''')
-                            
-                        # Exit option.
-                        elif str(moveChoice.lower()) == 'exit':
-                            break
+                        ''')
                         
-                        # Incase an actual move is entered, do the following.
-                        elif stockfish.is_move_correct(moveChoice):
-                            
-                            # Update the board.
-                            stockfish.make_moves_from_current_position([str(moveChoice)])
-                                
-                            moveIter = 1
-                    elif moveIter == 1:
-                        print("Stockfish plays the move -", stockfish.get_best_move())   
-                        stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
-                        moveIter = 0
+                    # Exit option.
+                    elif str(moveChoice.lower()) == 'exit':
+                        break
                     
-                    # Print the board.
-                    seeboard()             
+                    # Incase an actual move is entered, do the following.
+                    elif stockfish.is_move_correct(moveChoice):
+                        
+                        # Update the board.
+                        stockfish.make_moves_from_current_position([str(moveChoice)])
+                            
+                        moveIter = 1
+                elif moveIter == 1:
+                    print("Stockfish plays the move -", stockfish.get_best_move())   
+                    stockfish.make_moves_from_current_position([str(stockfish.get_best_move())])
+                    moveIter = 0
+                
+                # Print the board.
+                seeboard()             
       
     if appstate == 3:
         
